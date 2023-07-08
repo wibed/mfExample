@@ -19,6 +19,7 @@ const App = () => {
     >
       <Helmet>
         <title>SSR MF Example</title>
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
       </Helmet>
 
       <div style={{ padding: '1rem' }}>
