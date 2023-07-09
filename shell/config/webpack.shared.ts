@@ -1,5 +1,4 @@
 import { Configuration } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const tsRegex = /\.(js|jsx|ts|tsx)$/
 
@@ -18,7 +17,7 @@ const webpackConfig: Configuration = {
       },
     ],
   },
-  optimization: { splitChunks: false } // { chunks: 'async' as const } }
+  optimization: { splitChunks: false } //{ chunks: 'initial' as const } }
 };
 
 export default webpackConfig

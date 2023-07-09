@@ -24,7 +24,7 @@ export const server = [
     name: 'shell',
     library: { type: 'module' },
     experiments: { outputModule: true },
-    // filename: 'remoteEntry.js',
+    filename: 'remoteEntry.js',
     remotes: {
     //   remote1: 'remote1@http://localhost:3001/server/remoteEntry.js',
     },
@@ -36,8 +36,8 @@ export const server = [
   new StreamingTargetPlugin({
     name: 'shell',
     library: { type: 'module' },
-    // remotes: {
+    remotes: {
     //   remote1: 'remote1@http://localhost:3001/server/remoteEntry.js',
-    // },
+    },
   }),
 ]

@@ -4,6 +4,7 @@ import { renderToPipeableStream } from 'react-dom/server';
 import App from '../client/components/App';
 
 export default async (req, res, next) => {
+  console.log("in render")
   const helmet = Helmet.renderStatic();
   let didError = false;
 
@@ -32,6 +33,7 @@ export default async (req, res, next) => {
       res.send(`<h1>An error occurred</h1>`);
     },
     onError(err) {
+      console.log("in error")
       didError = true;
       console.error(err);
     },

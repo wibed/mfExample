@@ -11,17 +11,17 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
 const webpackConfig: Configuration = {
   name: 'client',
-  target: 'es2022',
+  target: 'web',
   entry: [path.resolve(__dirname, '../src/client/index')],
-  mode: 'production',
+  mode: 'development',
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, '../dist/client'),
     filename: '[name].js',
-    chunkFormat: "module",
     chunkFilename: '[name].js',
     publicPath: 'http://localhost:3000/static/',
     library: { type: "module" },
+    libraryTarget: "module"
   },
   externalsType: "module",
   experiments: { outputModule: true },
