@@ -31,6 +31,15 @@ const webpackConfig: Configuration = {
         use: [
           {
             loader: "babel-loader",
+            options: {
+              plugins: [
+                ["@babel/plugin-transform-modules-commonjs", { allowTopLevelThis: true }]
+              ],
+              presets: [
+                "@babel/preset-react",
+                "@babel/preset-typescript"
+              ]
+            }
           }
         ],
       },
