@@ -1,10 +1,11 @@
-import * as url from 'url';
+
 import path from 'path';
+import * as url from 'url';
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 
-import shared from './webpack.shared';
-import { server } from './module-federation';
+import shared from './webpack.shared'
+import { server } from './module-federation'
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 

@@ -2,6 +2,23 @@ import { Configuration } from 'webpack';
 
 const tsRegex = /\.(js|jsx|ts|tsx)$/
 
+// {
+//   "jsc": {
+//     "parser": {
+//       "syntax": "typescript",
+//       "tsx": false,
+//       "decorators": true,
+//       "dynamicImport": true
+//     },
+//     "target": "es2022",
+//     "paths": {},
+//     "baseUrl": "."
+//   },
+//   "module": {
+//     "type": "commonjs"
+//   }
+// }
+
 const webpackConfig: Configuration = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
@@ -12,12 +29,14 @@ const webpackConfig: Configuration = {
         test: tsRegex,
         exclude: /node_modules/,
         use: [
-          { loader: "ts-loader" }
+          {
+            loader: "babel-loader",
+          }
         ],
       },
     ],
   },
-  optimization: { splitChunks: false } //{ chunks: 'initial' as const } }
+  optimization: { splitChunks: { chunks: 'async' as const } }
 };
 
 export default webpackConfig
