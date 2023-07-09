@@ -1,5 +1,3 @@
-
-
 import * as url from 'url';
 import path from 'path';
 import { Configuration } from 'webpack';
@@ -13,14 +11,12 @@ const webpackConfig: Configuration = {
   name: 'server',
   target: "es2022",
   entry: [path.resolve(__dirname, '../src/server/index')],
-  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, '../dist/server'),
     filename: '[name].js',
     chunkFormat: "module",
     chunkFilename: '[name].js',
     library: { type: "module" },
-    libraryTarget: "module"
   },
   experiments: { outputModule: true },
   mode: 'production' as const,

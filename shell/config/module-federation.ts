@@ -1,11 +1,10 @@
-
 import webpack from 'webpack'
 import mfnode from '@module-federation/node';
-// import packagejson from "../package.json" assert { type: "json" }
+import packagejson from "../package.json" assert { type: "json" }
 
 const container = webpack.container
 const { NodeFederationPlugin, StreamingTargetPlugin } = mfnode
-// const dependencies = packagejson.dependencies
+const dependencies = packagejson.dependencies
 
 export const client = new container.ModuleFederationPlugin({
   name: 'shell',
@@ -15,8 +14,8 @@ export const client = new container.ModuleFederationPlugin({
   //   remote1: 'remote1@http://localhost:3001/client/remoteEntry.js',
   },
   shared: [{ 
-    react: { singleton: true }, //dependencies.react,
-    'react-dom': { singleton: true } //dependencies['react-dom'] 
+    react: { singleton: true, requiredVersion: dependencies.react },
+    'react-dom': { singleton: true, requiredVersion: dependencies['react-dom'] }
   }],
 })
 
@@ -30,8 +29,8 @@ export const server = [
     //   remote1: 'remote1@http://localhost:3001/server/remoteEntry.js',
     },
     shared: [{ 
-      react: { singleton: true }, //dependencies.react, 
-      'react-dom': { singleton: true } //dependencies['react-dom'] 
+      react: { singleton: true, requiredVersion: dependencies.react },
+      'react-dom': { singleton: true, requiredVersion: dependencies['react-dom'] }
     }],
   }, {}),
   new StreamingTargetPlugin({

@@ -22,8 +22,8 @@ const webpackConfig: Configuration = {
     chunkFilename: '[name].js',
     publicPath: 'http://localhost:3000/static/',
     library: { type: "module" },
-    libraryTarget: "module"
   },
+  externalsType: "module",
   experiments: { outputModule: true },
   plugins: [client],
 };
