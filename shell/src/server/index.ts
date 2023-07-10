@@ -1,11 +1,14 @@
-import express from 'express';
+// MARK: ESM
+// import express from 'express';
+// import initMiddleware from './middleware';
+// export default app;
 
+// MARK: COMMONJS
+import express from 'express';
 import initMiddleware from './middleware';
 
 const app = express();
 const PORT = 3000;
-
-
 
 const done = () => {
   app.listen(PORT, () => {
@@ -18,4 +21,5 @@ const done = () => {
 
 initMiddleware(express, app, done);
 
-export default app;
+export default app
+

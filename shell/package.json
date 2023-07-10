@@ -1,6 +1,5 @@
 {
   "name": "zoe",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,8 +21,8 @@
     "start": "yarn build && yarn serve",
     "serve": "node dist/server/main.js",
     "build": "yarn build:server && yarn build:client",
-    "build:client": "rimraf dist/client && cross-env NODE_ENV=production NODE_OPTIONS=\"--loader=ts-node/esm\" webpack --mode production --progress --config config/webpack.client.ts",
-    "build:server": "rimraf dist/server && cross-env NODE_ENV=production NODE_OPTIONS=\"--loader=ts-node/esm\" webpack --mode production --progress --config config/webpack.server.ts"
+    "build:client": "rimraf dist/client && cross-env NODE_ENV=production  webpack --mode development --progress --config config/webpack.client.js",
+    "build:server": "rimraf dist/server && cross-env NODE_ENV=production  webpack --mode development --progress --config config/webpack.server.js"
   },
   "eslintConfig": {
     "extends": [

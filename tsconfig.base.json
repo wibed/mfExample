@@ -1,6 +1,6 @@
 {
   "ts-node": {
-    "esm": true,
+    "esm": false,
     "files": true,
     "experimentalSpecifierResolution": "node",
   },
@@ -21,7 +21,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "commonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
